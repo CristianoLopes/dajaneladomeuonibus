@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+{% for about in about %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ about.title }}</h2>
+                    <div class="lead">{{ about.body }} </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+
+{% endfor %}

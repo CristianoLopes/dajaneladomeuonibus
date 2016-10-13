@@ -1,0 +1,6 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% for news in news %}
+  {% image news.main_image width-400 %}
+  {{ news.title }}
+ {% endfor %} 
+       
