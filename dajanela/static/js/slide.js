@@ -1,6 +1,6 @@
-$(document).ready(function() {
- 
-  $("#owl-janela").owlCarousel();
-      
- 
+$(document).ready(function () {
+
+    $('.slider').unslider({
+		autoplay: true
+		});
 });

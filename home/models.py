@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.db import models
-
+from django.utils import timezone
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.fields import StreamField
@@ -121,9 +121,14 @@ class Post(models.Model):
   imagem_src = models.URLField(null=True,blank=True)
   redesocial = models.CharField(max_length=255, choices=REDES_SOCIAIS_C)
   pid = models.CharField(max_length=255)
-  data = models.DateTimeField(null=True, blank=True)
+  date = models.DateField()
   link = models.CharField(max_length=255, null=True, blank=True)
   ativo = models.BooleanField(default=True)
+
+  search_fields = Page.search_fields + [
+        index.SearchField('texto'),
+        index.FilterField('date'),
+        ]
 
   panels = [
         FieldPanel('texto'),
@@ -131,7 +136,7 @@ class Post(models.Model):
         FieldPanel('imagem_src'),
         FieldPanel('redesocial'),
         FieldPanel('pid'),
-        FieldPanel('data'),
+        FieldPanel('date'),
         FieldPanel('link'),
         FieldPanel('ativo'),
     ]
@@ -139,7 +144,7 @@ class Post(models.Model):
 
   class Meta:
     verbose_name, verbose_name_plural = u"Post" , u"Posts Instagram"
-    ordering = ('-data',)
+    ordering = ('-date',)
 
   def __str__(self):
     return self.texto

@@ -16,6 +16,7 @@ from django.db.models import Count, Min, Sum, Avg
 from django.template.defaultfilters import slugify
 import re, json
 
+
 def log(texto):
 	print "===================================="
 	print texto
@@ -28,9 +29,9 @@ def carga():
 	from home.models import ApiTokenInstagramSettings
 	from instagram.client import InstagramAPI
 	# AUTH REQUIRED
-	access_token = INSTAGRAM_ACCESS_TOKEN
-	client_secret = INSTAGRAM_CLIENT_SECRET
-	user_id = INSTAGRAM_USER_ID
+	access_token = '1345635461.7089ef3.9bc2cfb0180741d392728cc107b432fb'
+	client_secret = 'cb86b8747fea45d9a745e95bb31110e0'
+	user_id = '1345635461'
 	api = InstagramAPI(access_token=access_token, client_secret=client_secret)
 	recent_media, next_ = api.user_recent_media(user_id=user_id, count=10)
 	#popular_media = api.media_popular(count=20)

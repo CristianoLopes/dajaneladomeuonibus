@@ -1,14 +1,14 @@
 {% load wagtailcore_tags %}
-<table>
-  <div id="owl-janela">
-    {% for post in post %}
-      <div> 
-        <img src="{{ post.imagem_src }}" alt="">
-          <div class="title">
-            {{ post.texto }}
-          </div>
-      </div>
-    {% endfor %}
 
-  </div>
-  </table>
+<div class="slider">
+	<ul>
+		{% for post in post %}
+		<li>
+			<div class="top-title">
+				<p> {{ post.texto }} </p>
+			</div>
+			<div id="frame"><img src="{{ post.imagem_src }}" alt="" /></div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
