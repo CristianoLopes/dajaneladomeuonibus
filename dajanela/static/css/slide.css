@@ -8,13 +8,10 @@
 }
 
 #frame img {
-	width: 100vmax;
-	height:100vmax;
-	-webkit-filter: blur(200px); /* Chrome, Safari, Opera */
-    filter: blur(200px);
-    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-    filter: grayscale(100%);
-}
+    width: 100vmax;
+    height: 100vmax;
+    -webkit-filter: blur(8px); /* Chrome, Safari, Opera */
+    filter: blur(8px);
 }
 
 #frame img:hover {

@@ -46,7 +46,7 @@ def carga():
 			if post:
 				post = post[0]
 				post.texto = u'{0}'.format(texto)
-				post.data = media.created_time
+				post.date = media.created_time
 				post.imagem = media.get_standard_resolution_url()
 				post.imagem_src = media.get_standard_resolution_url()
 			else:
@@ -54,7 +54,7 @@ def carga():
 					redesocial = 'INSTAGRAM',
 					pid = media.id,
 					texto = u'{0}'.format(texto),
-					data = media.created_time,
+					date = media.created_time,
 					link = media.link,
 					imagem = media.get_standard_resolution_url(),
 					imagem_src = media.get_standard_resolution_url(),
