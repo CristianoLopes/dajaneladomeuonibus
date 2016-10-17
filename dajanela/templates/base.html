@@ -18,19 +18,37 @@
     <!-- Custom CSS -->
     <link href="{% static 'css/stylish-portfolio.css' %}" rel="stylesheet">
     <link href="{% static 'css/search.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/slide.css' %}">
-    <link href="{% static 'css/unslider.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slide-fullscreen.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slide-partial.css' %}">
     <!-- Custom Fonts -->
     <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-
-
-
     <!-- Jscripts -->
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
     <!-- <script src="{% static 'js/jquery-1.11.3.min.js' %}" type="text/javascript"></script> -->
-    <script src="{% static 'js/unslider.js' %}"></script>
-    <script src="{% static 'js/slide.js' %}"></script>
+        <!-- Custom MasterSlide -->
+    <!-- Base MasterSlider style sheet -->
+    <link rel="stylesheet" href="{% static 'masterslider/style/masterslider.css' %}" />
+     
+    <!-- Master Slider Skin -->
+    <link href="{% static 'masterslider/skins/default/style.css' %}" rel='stylesheet' type='text/css'>
+      
+    <!-- MasterSlider Template Style -->
+     <link href="{% static 'masterslider/style/ms-fullscreen.css' %}" rel='stylesheet' type='text/css'>
+     <link href="{% static 'masterslider/style/ms-partialview.css' %}" rel='stylesheet' type='text/css'>
+     
+    <!-- google font Lato     -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 
+     
+    <!-- jQuery -->
+    <script src="{% static 'masterslider/jquery.min.js' %}"></script>
+    <script src="{% static 'masterslider/jquery.easing.min.js' %}"></script>
+     
+    <!-- Master Slider -->
+    <script src="{% static 'masterslider/masterslider.min.js' %}"></script>
+
+
+  
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -154,7 +172,8 @@
     $('.map').on('click', onMapClickHandler);
     </script>
     <!-- slidjs-->
-    <script src="{% static 'js/slide.js' %}"></script>
+    <script src="{% static 'js/slide-fullscreen.js' %}"></script>
+    <script src="{% static 'js/slide-partial.js' %}"></script>
         {% block extra_js %} 
             {# Override this in templates to add extra javascript #}
         {% endblock %}

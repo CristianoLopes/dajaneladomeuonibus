@@ -1,14 +1,20 @@
 {% load wagtailcore_tags %}
 
-<div class="slider">
-	<ul>
-		{% for post in post %}
-		<li>
-			<div class="top-title">
-				<p> {{ post.texto }} </p>
-			</div>
-			<div id="frame"><img src="{{ post.imagem_src }}" alt="" /></div>
-		</li>
-		{% endfor %}
-	</ul>
+    <!-- template -->
+<div class="ms-fullscreen-template" id="slider1-wrapper">
+    <!-- masterslider -->
+    <div class="master-slider ms-skin-default" id="masterslider">
+    {% for post in post %}
+        <div class="ms-slide slide-{{ forloop.counter }}">
+            <div class="slide-pattern"></div>
+            <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ post.imagem_src }}" alt="lorem ipsum dolor sit" > 
+            <h4 class="ms-layer medium-text" data-type="text" data-effect="rotate3dtop(70,0,0,180)" data-duration="2000" data-ease="easeInOutQuint" data-offset-y="150">
+               {{ post.texto }}
+            </h4>
+        </div>
+    {% endfor %}
+    </div>
+    <!-- end of masterslider -->
 </div>
+<!-- end of template -->
+            
