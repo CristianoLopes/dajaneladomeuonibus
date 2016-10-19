@@ -3,17 +3,17 @@
 <!-- template -->
 <div class="ms-partialview-template" id="partial-view">
     <!-- masterslider -->
-    <div class="master-slider ms-skin-default" id="masterslider">
+    <div class="master-slider ms-skin-default" id="masterslider2">
     {% for news in news %}
     {% image news.main_image width-600 as my_image %}
         <div class="ms-slide">
-            <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ my_image.url }}" alt="lorem ipsum dolor sit"/> 
+            <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ my_image.url }}" alt="lorem ipsum dolor sit"/>
             <div class="ms-info">
                 <h3>{{ news.title }}</h3>
                 <h4>{{ news.intro }}</h4>
-                <p>{{ news.body }}</p>
-            </div>  
+                <!-- <p>{{ news.body }}</p> -->
+            </div>
         </div>
-    {% endfor %} 
+    {% endfor %}
     </div>
 </div>

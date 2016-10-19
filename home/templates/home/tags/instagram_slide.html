@@ -3,18 +3,22 @@
     <!-- template -->
 <div class="ms-fullscreen-template" id="slider1-wrapper">
     <!-- masterslider -->
-    <div class="master-slider ms-skin-default" id="masterslider">
+    <div class="master-slider ms-skin-default" id="masterslider1">
     {% for post in post %}
-        <div class="ms-slide slide-{{ forloop.counter }}">
+        <div class="ms-slide slide">
             <div class="slide-pattern"></div>
-            <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ post.imagem_src }}" alt="lorem ipsum dolor sit" > 
-            <h4 class="ms-layer medium-text" data-type="text" data-effect="rotate3dtop(70,0,0,180)" data-duration="2000" data-ease="easeInOutQuint" data-offset-y="150">
-               {{ post.texto }}
+            <div class="ms-overlay-layers">
+              <!-- <h4 class="ms-layer big-text" data-type="text" data-effect="skewright(25,250)" data-duration="2000" data-ease="easeOutQuart" data-delay="500">
+                 {{ post.texto }}
+              </h4> -->
+              <h4 class="ms-layer thin-text-white small-text" data-type="text" data-effect="right(400)" data-duration="3400" data-ease="easeOutExpo">
+                 {{ post.texto }}
             </h4>
+          </div>
+              <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ post.imagem_src }}" alt="lorem ipsum dolor sit" >
         </div>
     {% endfor %}
     </div>
     <!-- end of masterslider -->
 </div>
 <!-- end of template -->
-            

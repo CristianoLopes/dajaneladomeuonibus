@@ -3,7 +3,7 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-   <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+   <!-- <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -26,17 +26,19 @@
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 
     <!-- Header -->
     <header id="top" class="header">
-    
+        <div class="fb">
+          <a href="{{ settings.app_label.SocialMediaSettings.facebook }}"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+        </div>
         {% search_results %}
         {% instagram_slide %}
-        <div class="site-title"><img src="../../static/images/logo.png" /></div>
+        <div class="site-title"><h1>{% block title %}{{ self.title }}{% endblock %}</h1></div>
 
-            
-            <!--<a href="#about" class="btn btn-dark btn-lg">{{ self.button }}</a>-->  
+
+            <!--<a href="#about" class="btn btn-dark btn-lg">{{ self.button }}</a>-->
     </header>
     <!-- About -->
     <section id="about" class="about">
@@ -49,7 +51,7 @@
         <div class="container">
         {% news_page %}
             <div class="row text-center">
-               
+
                 <!-- /.col-lg-10 -->
             </div>
             <!-- /.row -->
@@ -64,7 +66,7 @@
 
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary">
-        <div class="container"> 
+        <div class="container">
  {% testimonials %}
         </div>
     </aside>

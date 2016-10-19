@@ -1,75 +1,25 @@
 /*!
- * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
+ * #dajaneladomeuonibus
+ * Copyright 2013-2016 3ecologias.net
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
 /* Global Styles */
-
-
-@font-face {
-  font-family: 'QanelasSoftUltraLight';
-  src: url('../fonts/QanelasSoftUltraLight.eot');
-  src: url('../fonts/QanelasSoftUltraLight.woff2') format('woff2'),
-       url('../fonts/QanelasSoftUltraLight.woff') format('woff'),
-       url('../fonts/QanelasSoftUltraLight.ttf') format('truetype'),
-       url('../fonts/QanelasSoftUltraLight.svg#QanelasSoftDEMO-UltraLight') format('svg'),
-       url('../fonts/QanelasSoftUltraLight.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'QanelasSoftExtraBold';
-  src: url('../fonts/QanelasSoftExtraBold.eot');
-  src: url('../fonts/QanelasSoftExtraBold.woff2') format('woff2'),
-       url('../fonts/QanelasSoftExtraBold.woff') format('woff'),
-       url('../fonts/QanelasSoftExtraBold.ttf') format('truetype'),
-       url('../fonts/QanelasSoftExtraBold.svg#QanelasSoftExtraBold') format('svg'),
-       url('../fonts/QanelasSoftExtraBold.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
 html,
 body {
     width: 100%;
     height: 100%;
 }
 
-body {
-    font-family: "QanelasSoftUltraLight", Helvetica, Arial, sans-serif;
-    color:#170000;
-}
-
-/* TypeFace */
-
-h1, h2  {
-    font-family:"QanelasSoftUltraLight", Helvetica, Arial, sans-serif;
-    font-weight: 600;
-}
-
-h2{
-    font-size: 4em;
-    padding-bottom: 1em;
-    margin-top: 0em;
-}
-
-p{
-    margin: 0 0 0px;
-    font-size: 3rem;
-}
 
 .bg-primary {
     color: #fff;
-    background-color: #170000;
+    background-color: #000;
 }
 
 .site-title {
     width: 12vw;
-    padding: 0;  
+    padding: 0;
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -87,6 +37,16 @@ p{
 
 /* Custom Button Styles */
 
+.fb {
+    position: absolute;
+    z-index: 99;
+    top: 2.6vh;
+    right: 3.0em;
+    font-size: 90%;
+}
+.fb a{
+    color:#ededed;
+}
 .btn-dark {
     color: #fff;
     padding: 1em;
@@ -125,7 +85,7 @@ p{
 }
 
 ul.list-inline{
-    position: relative; 
+    position: relative;
     height: 10vh;
     margin-top: 5vh;
 }

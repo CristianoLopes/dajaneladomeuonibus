@@ -13,7 +13,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 
 class HomePage(Page):
-  button = models.CharField(max_length=255)	
+  button = models.CharField(max_length=255)
   body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -23,7 +23,7 @@ class HomePage(Page):
   content_panels = Page.content_panels + [
     FieldPanel('button'),
     StreamFieldPanel('body')
-	  
+
 	]
 
 class About(Page):
@@ -33,10 +33,10 @@ class About(Page):
         ('image', ImageChooserBlock()),
     ])
 
-	
+
 	content_panels = Page.content_panels + [
 	  StreamFieldPanel('body')
-	  
+
 	]
 
 class Participe(Page):
@@ -46,10 +46,10 @@ class Participe(Page):
         ('image', ImageChooserBlock()),
     ])
 
-  
+
   content_panels = Page.content_panels + [
     StreamFieldPanel('body')
-    
+
   ]
 class News(Page):
      main_image = models.ForeignKey(
@@ -76,11 +76,27 @@ class News(Page):
         FieldPanel('body'),
     ]
 class Testimonials(Page):
-  body = StreamField([
-        ('heading', blocks.CharBlock(classname="full title")),
-        ('paragraph', blocks.RichTextBlock()),
-        ('image', ImageChooserBlock()),
-    ])
+    # body = StreamField([
+    #     ('heading', blocks.CharBlock(classname="full title")),
+    #     ('paragraph', blocks.RichTextBlock()),
+    #     ('image', ImageChooserBlock()),
+    # ])
+     main_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    #  date = models.DateField("Post date")
+     instagram_user = models.TextField(blank=True, null=True)
+     name = models.CharField(max_length=255, null=True, blank=True)
+
+     content_panels = Page.content_panels + [
+        ImageChooserPanel('main_image'),
+        FieldPanel('name'),
+        FieldPanel('instagram_user'),
+    ]
 
 @register_setting
 class ApiTokenInstagramSettings(BaseSetting):
@@ -112,7 +128,7 @@ REDES_SOCIAIS_C = (
   ('INSTAGRAM', 'Instagram'),
 )
 @register_snippet
-@python_2_unicode_compatible 
+@python_2_unicode_compatible
 
 class Post(models.Model):
   """(Post description)"""
@@ -156,4 +172,3 @@ class Post(models.Model):
     elif self.imagem_src:
       return self.imagem_src
     return None
-
