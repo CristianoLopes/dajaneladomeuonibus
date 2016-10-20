@@ -130,7 +130,7 @@ REDES_SOCIAIS_C = (
 @register_snippet
 @python_2_unicode_compatible
 
-class Post(models.Model):
+class Post(models.Model, index.Indexed):
   """(Post description)"""
   texto = models.TextField()
   imagem = models.ImageField(upload_to='media/instagram',null=True,blank=True,)
@@ -141,10 +141,10 @@ class Post(models.Model):
   link = models.CharField(max_length=255, null=True, blank=True)
   ativo = models.BooleanField(default=True)
 
-  search_fields = Page.search_fields + [
-        index.SearchField('texto'),
+  search_fields = (
+        index.SearchField('texto', partial_match=True, boost=10),
         index.FilterField('date'),
-        ]
+        )
 
   panels = [
         FieldPanel('texto'),
