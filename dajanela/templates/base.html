@@ -19,6 +19,7 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/search.css' %}" rel="stylesheet">
     <link href="{% static 'css/type.css' %}" rel="stylesheet">
+    <link href="{% static 'css/swipebox.css' %}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/slide-fullscreen.css' %}">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/slide-partial.css' %}"> -->
 
@@ -48,6 +49,8 @@
 
     <!-- Master Slider -->
     <script src="{% static 'masterslider/masterslider.min.js' %}"></script>
+    <!-- SwipeBox  -->
+    <script src="{% static 'js/jquery.swipebox.js' %}"></script>
 
 
 
@@ -173,6 +176,13 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+    </script>
+    <script type="text/javascript">
+      ;( function( $ ) {
+
+      	$( '.swipebox' ).swipebox();
+
+      } )( jQuery );
     </script>
     <!-- slidjs-->
     <script src="{% static 'js/slide-fullscreen.js' %}"></script>

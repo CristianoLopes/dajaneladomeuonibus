@@ -2,8 +2,8 @@
 /* reset webkit search input browser style */
 .search{
 	position: absolute;
-    top: 2.3vh;
-    right: 8em;
+    top: 2.5vh;
+    right: 7em;
     z-index: 997;
 }
 input {

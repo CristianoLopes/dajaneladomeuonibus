@@ -235,8 +235,12 @@ hr.small {
     opacity: 0.8;
 }
 
-/* Call to Action */
 
+.ms-staff-carousel .ms-nav-prev, .ms-staff-carousel .ms-nav-next {
+    background-color: #eb8033 !important;
+  }
+
+/* Call to Action */
 .call-to-action {
     padding: 50px 0;
 }
