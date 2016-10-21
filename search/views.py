@@ -27,7 +27,7 @@ def search(request):
         search_results = Post.objects.none()
 
     # Pagination
-    paginator = Paginator(search_results, 5)
+    paginator = Paginator(search_results, 10)
     try:
         search_results = paginator.page(post)
     except PageNotAnInteger:
