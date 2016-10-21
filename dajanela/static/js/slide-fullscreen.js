@@ -10,12 +10,12 @@ $( document ).ready(function() {
             view:'parallaxMask',
             layout:'fullscreen',
             fullscreenMargin:0,
-            speed:7,
+            speed:10,
             autoplay:true,
             filters: {
-              grayscale: 1,
-              opacity: 0.9,
-              brightness: 2
+              grayscale: 2,
+              opacity: 1,
+              brightness: .7
             },
             loop:true
         });

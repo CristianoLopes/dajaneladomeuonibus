@@ -19,7 +19,7 @@ def participe_page():
  	 'participe' : participe
 
  	}
- 	
+
 @register.inclusion_tag('home/tags/news_page.html')
 def news_page():
  	news = News.objects.live()
@@ -50,7 +50,3 @@ def testimonials():
  	 'testimonials' : testimonials
 
  	}
-
-
-
- 	

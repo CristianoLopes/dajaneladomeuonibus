@@ -217,19 +217,19 @@ h2{
 
 h4  {
     font-family:"Gotham-Thin";
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased !important;*/
 }
 
 .ms-slide-info h3 {
     color:#E8E8E8 !important;
     font-family:"Gotham-Book";
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased !important;*/
     font-size: 2.2em !important;
     margin-top: 2em !important;
 }
@@ -237,20 +237,20 @@ h4  {
 .ms-slide-info h4 {
     font-family:"Gotham-Light";
     color:#E8E8E8 !important;
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased !important;*/
     margin-top: 0.8em !important;
     font-size: 1.8em !important;
 }
 
 .ms-slide-info p {
     color:#E8E8E8 !important;
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased !important;*/
     margin-top: 0.8em !important;
     font-size: 1.2em !important;
 }
@@ -258,9 +258,18 @@ h4  {
 p{
     margin: 0 0 0px;
     font-size: 3rem;
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased !important;*/
 
+}
+
+.tooltip-inner {
+  font-family:"Gotham-Light";
+  color:#E8E8E8 !important;
+  font-size: 1.4em;
+  text-align: justify; !important;
+  padding:3em;
+  padding-right:5em;
 }
