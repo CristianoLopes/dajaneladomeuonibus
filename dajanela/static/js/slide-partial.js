@@ -19,4 +19,34 @@ $( document ).ready(function() {
         },
         layout:'partialview'
     });
+    // $("a").stop(true).fadeTo(400, 1);
+    // $("a").tooltip({
+    //   html: true,
+    //   container: 'body'
+    // });
+
+    var HasTooltip = $('.news-tooltip');
+      HasTooltip.on('mouseenter', function(e) {
+       e.preventDefault();
+       var isShowing = $(this).data('isShowing');
+       HasTooltip.removeData('isShowing');
+       if (isShowing !== 'true')
+       {
+         HasTooltip.not(this).tooltip('hide');
+         $(this).data('isShowing', "true");
+         $(this).tooltip('show');
+       }
+       else
+       {
+         $(this).tooltip('hide');
+       }
+
+     }).tooltip({
+       animation: true,
+       trigger: 'manual',
+       html: true
+     });
+
+
+
 });

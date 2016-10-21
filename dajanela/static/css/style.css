@@ -235,10 +235,12 @@ hr.small {
     opacity: 0.8;
 }
 
-
+/* testimonials */
 .ms-staff-carousel .ms-nav-prev, .ms-staff-carousel .ms-nav-next {
     background-color: #eb8033 !important;
   }
+
+
 
 /* Call to Action */
 .call-to-action {
@@ -290,4 +292,29 @@ footer {
     max-width:100% !important;
     width: 100% !important;
     height:auto;
+}
+
+/*.ms-info a.title:hover:after{
+  font-family:"Gotham-Light" !important;
+  font-size: 1.2em !important;
+   content: attr(data-title);
+}*/
+.news-tooltip + .tooltip > .tooltip-inner {
+  width: 100%;
+}
+
+.tooltip {
+  width: 100%;
+}
+
+.tooltip-inner {
+  max-width: 100%;
+}
+
+.tooltip img {
+  margin-left: 12vw;
+}
+
+.news-tooltip {
+  width: 100%;
 }
