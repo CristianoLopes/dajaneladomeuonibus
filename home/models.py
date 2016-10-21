@@ -143,7 +143,7 @@ class Post(models.Model, index.Indexed):
 
   search_fields = (
         index.SearchField('texto', partial_match=True, boost=10),
-        index.FilterField('date'),
+        index.FilterField('imagem_src'),
         )
 
   panels = [
