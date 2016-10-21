@@ -53,7 +53,7 @@ input[type=search]:focus {
 	padding-left: 32px;
 	color: #000;
 	background-color: #eb8033;
-	cursor: url('images/pointer.png'), auto;
+	cursor:  auto;
 }
 /* placeholder */
 input:-moz-placeholder {

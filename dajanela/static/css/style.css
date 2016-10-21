@@ -47,6 +47,14 @@ body {
 .fb a{
     color:#ededed;
 }
+
+.ig li{
+  margin-right: 7%;
+  color: rgba(255, 255, 255, 0.52);
+  margin-top: 2%;
+}
+
+
 .btn-dark {
     color: #fff;
     padding: 1em;
