@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.db import models
-
+from django.utils import timezone
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.fields import StreamField
@@ -13,7 +13,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 
 class HomePage(Page):
-  button = models.CharField(max_length=255)	
+  button = models.CharField(max_length=255)
   body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -23,7 +23,7 @@ class HomePage(Page):
   content_panels = Page.content_panels + [
     FieldPanel('button'),
     StreamFieldPanel('body')
-	  
+
 	]
 
 class About(Page):
@@ -33,10 +33,10 @@ class About(Page):
         ('image', ImageChooserBlock()),
     ])
 
-	
+
 	content_panels = Page.content_panels + [
 	  StreamFieldPanel('body')
-	  
+
 	]
 
 class Participe(Page):
@@ -46,10 +46,10 @@ class Participe(Page):
         ('image', ImageChooserBlock()),
     ])
 
-  
+
   content_panels = Page.content_panels + [
     StreamFieldPanel('body')
-    
+
   ]
 class News(Page):
      main_image = models.ForeignKey(
@@ -76,11 +76,27 @@ class News(Page):
         FieldPanel('body'),
     ]
 class Testimonials(Page):
-  body = StreamField([
-        ('heading', blocks.CharBlock(classname="full title")),
-        ('paragraph', blocks.RichTextBlock()),
-        ('image', ImageChooserBlock()),
-    ])
+    # body = StreamField([
+    #     ('heading', blocks.CharBlock(classname="full title")),
+    #     ('paragraph', blocks.RichTextBlock()),
+    #     ('image', ImageChooserBlock()),
+    # ])
+     main_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    #  date = models.DateField("Post date")
+     instagram_user = models.TextField(blank=True, null=True)
+     name = models.CharField(max_length=255, null=True, blank=True)
+
+     content_panels = Page.content_panels + [
+        ImageChooserPanel('main_image'),
+        FieldPanel('name'),
+        FieldPanel('instagram_user'),
+    ]
 
 @register_setting
 class ApiTokenInstagramSettings(BaseSetting):
@@ -112,18 +128,23 @@ REDES_SOCIAIS_C = (
   ('INSTAGRAM', 'Instagram'),
 )
 @register_snippet
-@python_2_unicode_compatible 
+@python_2_unicode_compatible
 
-class Post(models.Model):
+class Post(models.Model, index.Indexed):
   """(Post description)"""
   texto = models.TextField()
   imagem = models.ImageField(upload_to='media/instagram',null=True,blank=True,)
   imagem_src = models.URLField(null=True,blank=True)
   redesocial = models.CharField(max_length=255, choices=REDES_SOCIAIS_C)
   pid = models.CharField(max_length=255)
-  data = models.DateTimeField(null=True, blank=True)
+  date = models.DateField()
   link = models.CharField(max_length=255, null=True, blank=True)
   ativo = models.BooleanField(default=True)
+
+  search_fields = (
+        index.SearchField('texto', partial_match=True, boost=10),
+        index.FilterField('date'),
+        )
 
   panels = [
         FieldPanel('texto'),
@@ -131,7 +152,7 @@ class Post(models.Model):
         FieldPanel('imagem_src'),
         FieldPanel('redesocial'),
         FieldPanel('pid'),
-        FieldPanel('data'),
+        FieldPanel('date'),
         FieldPanel('link'),
         FieldPanel('ativo'),
     ]
@@ -139,7 +160,7 @@ class Post(models.Model):
 
   class Meta:
     verbose_name, verbose_name_plural = u"Post" , u"Posts Instagram"
-    ordering = ('-data',)
+    ordering = ('-date',)
 
   def __str__(self):
     return self.texto
@@ -151,4 +172,3 @@ class Post(models.Model):
     elif self.imagem_src:
       return self.imagem_src
     return None
-

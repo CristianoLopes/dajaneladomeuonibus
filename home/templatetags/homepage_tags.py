@@ -19,7 +19,7 @@ def participe_page():
  	 'participe' : participe
 
  	}
- 	
+
 @register.inclusion_tag('home/tags/news_page.html')
 def news_page():
  	news = News.objects.live()
@@ -35,5 +35,18 @@ def instagram_slide(context):
         'request': context['request'],
     }
 
+@register.inclusion_tag('home/tags/search_results.html')
+def search_results():
+ 	post = Post.objects.all()
+ 	return {
+ 	 'post' : post
 
- 	
+ 	}
+
+@register.inclusion_tag('home/tags/testimonials.html')
+def testimonials():
+ 	testimonials = Testimonials.objects.all()
+ 	return {
+ 	 'testimonials' : testimonials
+
+ 	}
