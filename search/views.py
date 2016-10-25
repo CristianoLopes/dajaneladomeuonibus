@@ -12,7 +12,7 @@ from home.models import Post
 
 def search(request):
     search_query = request.GET.get('query', None)
-    post = request.GET.get('post', 1)
+    # post = request.GET.get('post', 1)
 
     # Search
     if search_query:
@@ -27,9 +27,9 @@ def search(request):
         search_results = Post.objects.none()
 
     # Pagination
-    paginator = Paginator(search_results, 10)
+    paginator = Paginator(search_results, 20)
     try:
-        search_results = paginator.page(post)
+        search_results = paginator.page(search_query)
     except PageNotAnInteger:
         search_results = paginator.page(1)
     except EmptyPage:

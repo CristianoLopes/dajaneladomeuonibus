@@ -273,3 +273,7 @@ p{
   padding:3em;
   padding-right:5em;
 }
+
+video {
+max-width: 100%;
+}

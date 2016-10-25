@@ -1,5 +1,6 @@
 {% load wagtailcore_tags %}
 
+
     <!-- template -->
 <div class="ms-fullscreen-template" id="slider1-wrapper">
     <!-- masterslider -->
@@ -7,17 +8,24 @@
     {% for post in post %}
         <div class="ms-slide slide">
             <div class="slide-pattern"></div>
+
             <div class="ms-overlay-layers">
               <!-- <h4 class="ms-layer big-text" data-type="text" data-effect="skewright(25,250)" data-duration="2000" data-ease="easeOutQuart" data-delay="500">
                  {{ post.texto }}
               </h4> -->
-              <h4 class="ms-layer thin-text-white small-text" data-type="text" data-effect="right(400)" data-duration="3400" data-ease="easeOutExpo">
-                 {{ post.texto }}
-            </h4>
-          </div>
-            <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ post.imagem_src }}" alt="lorem ipsum dolor sit" >
-            <a data-type="video" href="{{ post.imagem_src }}"> </a>
-          </div>
+               <h4 class="ms-layer thin-text-white small-text" data-type="text" data-effect="right(400)" data-duration="3400" data-ease="easeOutExpo">
+                 <a href="{{ post.link }}" target="_blank"> {{ post.texto|truncatechars:100|slice:"22:" }} </a>
+               </h4>
+             </div>
+            {% if post.imagem_src|truncatechars:199|slice:"-52:-48" == ".jpg" %} </p>
+             <img data-type="image" src="../../../../static/masterslider/style/blank.gif" data-src="{{ post.imagem_src }}" alt="lorem ipsum dolor sit" >
+            {% else %}
+              <a data-type="video" href="{{ post.imagem_src }}"> </a>
+            {% endif %}
+
+
+
+           </div>
     {% endfor %}
     </div>
     <!-- end of masterslider -->

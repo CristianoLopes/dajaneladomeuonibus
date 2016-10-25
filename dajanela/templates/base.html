@@ -39,8 +39,12 @@
     <link href="{% static 'masterslider/style/ms-fullscreen.css' %}" rel='stylesheet' type='text/css'>
     <link href="{% static 'masterslider/style/ms-partialview.css' %}" rel='stylesheet' type='text/css'>
     <link href="{% static 'masterslider/style/ms-staff-style.css' %}" rel='stylesheet' type='text/css'>
+    <link href="{% static 'masterslider/style/ms-lightbox.css' %}" rel='stylesheet' type='text/css'>
     <!-- google font Lato     -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
+
+    <!-- Prettyphoto Lightbox jQuery Plugin -->
+    <link href="{% static 'css/prettyPhoto.css' %}"  rel='stylesheet' type='text/css'/>
 
 
     <!-- jQuery -->
@@ -186,8 +190,20 @@
     </script>
     <!-- slidjs-->
     <script src="{% static 'js/slide-fullscreen.js' %}"></script>
+    <script src="{% static 'js/slide-lightbox.js' %}"></script>
     <script src="{% static 'js/slide-partial.js' %}"></script>
     <script src="{% static 'js/slide-staffcarousel.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+
+  
+<!-- MasterSlider Template Style -->
+
+ 
+<!-- google font Lato
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+-->
+ 
+        
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}

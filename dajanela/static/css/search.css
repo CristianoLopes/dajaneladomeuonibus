@@ -68,3 +68,10 @@ input:-moz-placeholder {
 input::-webkit-input-placeholder {
 	color: transparent;
 }
+/*
+search results*/
+.header-search {
+    height: 8vh;
+    background-color: #000;
+		margin-bottom: 3em;
+}

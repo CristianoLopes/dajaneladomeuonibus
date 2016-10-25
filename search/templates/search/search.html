@@ -1,38 +1,68 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-searchresults{% endblock %}
 
 {% block title %}Search{% endblock %}
 
 {% block content %}
-    <h1>Search</h1>
+<header id="top" class="header-search">
+        <div class="fb">
+          <a href="http://instagram.com/dajaneladomeuonibus" target="_blank"><i class="fa fa-instagram fa-fw fa-3x"></i></a>
+        </div>
 
-  <!--  <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>-->
+<div class="search">
+    <form action="/search/" method="get">
+        <input type="search" name="query">
+      <!--  <input type="submit" value="Search" class="button">-->
+    </form>
+</div>
+<!-- end of template -->
+<div class="site-title"><h1>#dajaneladomeuonibus</h1></div>
 
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% url 'search' %}"><img src="{{ result.imagem_src }}"/></a><p>{{ result.texto}}</p></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description|safe }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
 
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
-        {% endif %}
+            <!--<a href="#about" class="btn btn-dark btn-lg">Conheça!</a>-->
+    </header>
 
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
-        {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
+
+
+
+                      {% if search_results %}
+
+
+
+                      <div class="ms-lightbox-template">
+
+                                  <!-- masterslider -->
+                                  <div class="master-slider ms-skin-default" id="masterslider3">
+                                    {% for result in search_results %}
+                                      <div class="ms-slide">
+                                          <img src="../../../../static/masterslider/style/blank.gif" data-src="{{ result.imagem_src }}" alt="lorem ipsum dolor sit"/>
+                                          <img class="ms-thumb" src="{{ result.imagem_src }}" alt="thumb" />
+                                          <a href="{{ result.imagem_src }}" class="ms-lightbox" rel="prettyPhoto[gallery1]" title="{{ result.texto }}"> lightbox </a>
+                                      </div>
+                                        {% endfor %}
+                                    </div>
+
+                      </div>
+
+
+
+
+
+                <!-- /.col-lg-10 -->
+                <!-- {% if search_results.has_previous %}
+                    <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                {% if search_results.has_next %}
+                    <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+                {% endif %} -->
+
+            {% elif search_query %}
+              <div class="row" ><div class="col-md-6"> <h2>Não encontramos nenhum ônibus. Tente outra linha.</h2></div></div>
+            {% endif %}
+
+
+
 {% endblock %}
