@@ -273,3 +273,30 @@ p{
   padding:3em;
   padding-right:5em;
 }
+.container2{
+  text-align: justify;
+  position: relative;
+}
+.container2 li{
+  text-align: justify;
+  font-family:"Gotham-Book";
+  font-size: 1.4em;
+}
+
+.caption1 h3{
+  text-align: left;
+  font-family: "Gotham-Book";
+  font-size: 1.4em;
+  margin-top: 4%;
+}
+.caption2 h3{
+  text-align: start;
+  font-family: "Gotham-Book";
+  font-size: 1.4em;
+}
+.caption3 h3{
+  text-align: start;
+  font-family: "Gotham-Book";
+  font-size: 1.4em;
+  margin-top: 4%;
+}
