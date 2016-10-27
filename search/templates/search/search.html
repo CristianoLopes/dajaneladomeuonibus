@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load homepage_tags %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-searchresults{% endblock %}
@@ -63,6 +64,9 @@
               <div class="row" ><div class="col-md-12"> <h2 class="error">Não encontramos nenhum ônibus. Tente outra linha.</h2></div></div>
             {% endif %}
 
-
+            <section id="portfolio" class="portfolio">
+               {% participe_page %}
+                <!-- /.container -->
+            </section>
 
 {% endblock %}

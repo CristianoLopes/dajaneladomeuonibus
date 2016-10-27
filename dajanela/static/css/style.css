@@ -325,10 +325,16 @@ footer {
 
 .tooltip-inner {
   max-width: 100%;
+  background: #000 !important;
 }
 
 .tooltip img {
   margin-left: 12vw;
+}
+
+.tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .news-tooltip {
