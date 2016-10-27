@@ -11,7 +11,7 @@ $( document ).ready(function() {
             layout:'fullscreen',
             fullscreenMargin:0,
             speed:10,
-            autoplay:false,
+            autoplay:true,
             filters: {
               grayscale: 2,
               opacity: 1,

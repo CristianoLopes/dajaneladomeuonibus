@@ -13,12 +13,12 @@
 
 <div class="search">
     <form action="/search/" method="get">
-        <input type="search" name="query">
+        <input type="search" name="query" placeholder="Encontre...">
       <!--  <input type="submit" value="Search" class="button">-->
     </form>
 </div>
 <!-- end of template -->
-<div class="site-title"><h1>#dajaneladomeuonibus</h1></div>
+<div class="site-title"> <a href="/"><h1>#dajaneladomeuonibus</h1></a></div>
 
 
             <!--<a href="#about" class="btn btn-dark btn-lg">Conheça!</a>-->
@@ -60,7 +60,7 @@
                 {% endif %} -->
 
             {% elif search_query %}
-              <div class="row" ><div class="col-md-6"> <h2>Não encontramos nenhum ônibus. Tente outra linha.</h2></div></div>
+              <div class="row" ><div class="col-md-12"> <h2 class="error">Não encontramos nenhum ônibus. Tente outra linha.</h2></div></div>
             {% endif %}
 
 

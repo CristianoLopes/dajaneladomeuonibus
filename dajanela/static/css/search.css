@@ -12,8 +12,11 @@ input {
 input[type=search] {
 	-webkit-appearance: textfield;
 	-webkit-box-sizing: content-box;
-	font-family: inherit;
+	font-family: "Gotham-Book";
 	font-size: 100%;
+	font-weight: bold;
+	color: #ededed !important;
+	text-align: center;
 }
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
@@ -21,7 +24,7 @@ input::-webkit-search-cancel-button {
 }
 /* search input field */
 input[type=search] {
-	background: #ededed url(../images/find.png) no-repeat 9px center;
+	background: #ededed url(../images/find.png) no-repeat 5px center;
 	border: none;
 	padding: 9px 10px 9px 32px;
 	width: 55px;
@@ -57,16 +60,20 @@ input[type=search]:focus {
 }
 /* placeholder */
 input:-moz-placeholder {
-	color: #999;
+	color: #ededed;
+	padding-left: 1.4em;
 }
 input::-webkit-input-placeholder {
-	color: #999;
+	color: #ededed;
+	padding-left: 1.4em;
 }
 input:-moz-placeholder {
-	color: transparent;
+	color: #ededed;
+	padding-left: 1.4em;
 }
 input::-webkit-input-placeholder {
-	color: transparent;
+	color: #ededed;
+	padding-left: 1.4em;
 }
 /*
 search results*/
@@ -74,4 +81,13 @@ search results*/
     height: 8vh;
     background-color: #000;
 		margin-bottom: 3em;
+}
+
+.site-title a {
+		text-decoration: none;
+		color: #ededed;
+		}
+
+.error {
+	text-align: center;
 }

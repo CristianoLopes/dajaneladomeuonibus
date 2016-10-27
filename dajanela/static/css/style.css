@@ -326,3 +326,7 @@ footer {
 .news-tooltip {
   width: 100%;
 }
+
+.ms-layer a {
+  color: #fff;
+}

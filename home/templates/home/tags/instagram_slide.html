@@ -14,7 +14,7 @@
                  {{ post.texto }}
               </h4> -->
                <h4 class="ms-layer thin-text-white small-text" data-type="text" data-effect="right(400)" data-duration="3400" data-ease="easeOutExpo">
-                 <a href="{{ post.link }}" target="_blank"> {{ post.texto|truncatechars:100|slice:"22:" }} </a>
+                 <a href="{{ post.link }}" target="_blank"> {{ post.texto|truncatechars:189|slice:"22:" }} </a>
                </h4>
              </div>
             {% if post.imagem_src|truncatechars:199|slice:"-52:-48" == ".jpg" %} </p>
