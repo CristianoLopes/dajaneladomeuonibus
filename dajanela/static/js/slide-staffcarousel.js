@@ -5,7 +5,7 @@ $( document ).ready(function() {
         loop:true,
         width:240,
         height:240,
-        speed:20  ,
+        speed:20,
         view:'focus',
         preload:'all',
         space:0,
