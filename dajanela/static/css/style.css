@@ -32,7 +32,13 @@ body {
 }
 
 .lead {
-    margin-bottom: 2.5em;
+    margin-bottom: 0.5em;
+}
+.thumbnail {
+  border:none !important;
+}
+.thumbnail2{
+      margin-top: 10%;
 }
 
 /* Custom Button Styles */
@@ -48,12 +54,13 @@ body {
     color:#ededed;
 }
 
-.ig li{
-  margin-right: 7%;
-  color: rgba(255, 255, 255, 0.52);
-  margin-top: 2%;
-}
 
+
+.ig li{
+  /*position:absolute;*/
+  margin-right: 5%;
+  color: rgba(255, 255, 255, 0.52);
+}
 
 .btn-dark {
     color: #fff;
@@ -103,6 +110,7 @@ ul.list-inline{
 
 hr.small {
     max-width: 100px;
+    display: none;
 }
 
 /* Side Menu */
